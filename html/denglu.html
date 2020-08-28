@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/denglu.css">
+</head>
+<body>
+    <div class="box">
+        <div class="wrap">
+            <div class="menu">
+                <div class="menu_box">
+                    <div class="logo_box">
+                        <a href="###" class="logo"></a>
+                    </div>
+                    <div class="title_itme">
+                        <h4 class="title_h4">
+                            登录小米账号
+                        </h4>
+                    </div> 
+                    <div>
+                        <div class="form_box">
+                            <div class="form">
+                                <h4 class="form_h4">
+                                    用户名/账号
+                                </h4>
+                                <div class="input_box">
+                                    <input id="username" type="text" class="input_text">
+                                </div>
+                                <div class="prompt">
+                                    登录成功，将跳转到首页
+                                </div>
+                                <h4 class="form_h4">
+                                    密码
+                                </h4>
+                                <div class="input_box">
+                                    <input id="password" type="password" class="input_text">
+                                </div>
+                                <div class="Bnt">
+                                    <input id="submitBtn" class="Bnt_submit" type="button" value="登录">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="copyright_box">
+            <ul class="list_ul">
+                <li><a class="list_a" href="###">简体</a>|</li>
+                <li><a class="list_a" href="###">繁体</a>|</li>
+                <li><a class="list_a" href="###">English</a>|</li>
+                <li><a class="list_a" href="###">常见问题</a>|</li>
+            </ul>
+        </div>
+        <p class="list_p">
+            <span>
+                小米公司版权所有-京ICP备10046444-
+                <a class="lista" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134">
+                <span><img src="../images/ghs.png" alt=""></span>
+                京公网安备11010802020134号
+                </a>
+                -京ICP证110507号
+            </span>
+        </p>
+    </div>
+    <script src="../js/QF.js"></script>
+    <script>
+         ; (function () {
+            // 实现用户名验证功能
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+            var submitBtn = document.getElementById("submitBtn");
+            // 定义两把锁  一把决定用户名是否验证通过 一把决定密码是否验证通过
+            var user_lock = false;
+            var pass_lock = false;
+
+            username.onblur = function () {
+                // 获取用户输入的文本
+                var val = username.value;
+                // 定义正则表达式
+                var reg = /^[^\d]\w{6,10}$/;
+                // 验证是否符合正则的规则
+                if (!reg.test(val)) {
+                    alert("请输入符合正则验证的字符串");
+                    user_lock = false;
+                    return;
+                }
+                user_lock = true;
+            }
+
+
+            password.onblur = function () {
+                var val = password.value;
+                var reg = /^[^\d]\w{6,10}$/;
+                if (!reg.test(val)) {
+                    alert("密码不符合正则验证");
+                    pass_lock = false;
+                    return;
+                }
+                pass_lock = true;
+            }
+
+
+
+            submitBtn.onclick = function() {
+                // 验证两把锁
+                if (!(user_lock && pass_lock)) {
+                    return;
+                }
+
+                // 发送请求
+                QF.pPost("/php/login.php", {username: username.value, password: password.value})
+                .then((data) => {
+                    if (!data.error) {
+                        // 先获取URL的hash部分
+                        var targetURL = location.hash.slice(1) || "./index.html";
+                        console.log(targetURL);
+                        // 提示用户
+                        alert(data.msg);
+                        location.href = targetURL;
+                    } else {
+                        throw new Error(data.msg);
+                    }
+                })
+                .catch(function(data) {
+                    console.log(data);
+                });
+            }
+
+        })();
+    </script>
+</body>
+</html>

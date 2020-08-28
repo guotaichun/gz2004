@@ -1,0 +1,93 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "402163",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "726661",
+      "name": "尖角箭头-上",
+      "font_class": "jianjiaojiantoushang-copy-copy-copy",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "893733",
+      "name": "新浪",
+      "font_class": "sina",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "2264107",
+      "name": "右_三角",
+      "font_class": "you_sanjiao",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "4895263",
+      "name": "左尖角",
+      "font_class": "zuojianjiao",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "5512526",
+      "name": "定位",
+      "font_class": "icon-dingwei",
+      "unicode": "e502",
+      "unicode_decimal": 58626
+    },
+    {
+      "icon_id": "9285141",
+      "name": "15天",
+      "font_class": "tian",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "9995927",
+      "name": "时间 历史记录 计时 钟表 线性",
+      "font_class": "shijian1",
+      "unicode": "e503",
+      "unicode_decimal": 58627
+    },
+    {
+      "icon_id": "11472539",
+      "name": "放大镜",
+      "font_class": "fangdajing",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "13435780",
+      "name": "礼盒",
+      "font_class": "lihe",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "13717102",
+      "name": "7天",
+      "font_class": "tian1",
+      "unicode": "e505",
+      "unicode_decimal": 58629
+    },
+    {
+      "icon_id": "14110401",
+      "name": "维修单流转备份 （修改）",
+      "font_class": "weixiudanliuzhuanbeifenxiugai",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    }
+  ]
+}
